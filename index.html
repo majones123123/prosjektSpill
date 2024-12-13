@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="tekst/css" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Point & Click</title>
-</head>
-<body>
-
-    <div id="background">
-        <h1></h1>
-
-
+  </head>
+  <body id="body">
+    <div class="container" onclick="endreBakgrunn()">
+      <h1>SPILL</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        odio quibusdam dolorum. Tempora velit pariatur fuga voluptatem?
+        Corrupti, tempora explicabo.
+      </p>
     </div>
 
-
     <script>
-        //Legg til senere
+      //Legg til senere
 
+      function endreBakgrunn() {
+        console.log("Endrer bakgrunn");
+        document.getElementById("body").style.backgroundImage = "Bilder/mittAndreBilde.jpg";
+      }
     </script>
-    
-</body>
+  </body>
 </html>

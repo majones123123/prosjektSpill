@@ -3,10 +3,18 @@
   margin: 0px;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(Bilder/haunted_forest.jpg);
+  background-size: 100% 100%;
+}
 img {
   width: 100%;
 }
 
-#background {
-  background-image: url(Bilder/haunted_forest.jpg);
+.container {
+  max-width: 500px;
 }
