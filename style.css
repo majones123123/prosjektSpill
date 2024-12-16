@@ -16,10 +16,10 @@ img {
 }
 
 #ramme {
-  border: 1px solid grey;
+  border: 10px solid grey;
   background-color: grey;
   border-radius: 20px;
-    
+  opacity: 70%;
 }
 
 .container {
@@ -28,6 +28,7 @@ img {
 
 h1 {
   text-align: center;
+  
 }
 
 .hover-tekst {
