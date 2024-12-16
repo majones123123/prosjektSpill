@@ -18,3 +18,12 @@ img {
 .container {
   max-width: 500px;
 }
+
+.hover-tekst {
+  font-size: 30px;
+  transition: transform 3s ease;
+}
+
+.hover-tekst:hover {
+  transform: scale(1.5);
+}
