@@ -15,15 +15,26 @@ img {
   width: 100%;
 }
 
+#ramme {
+  border: 1px solid grey;
+  background-color: grey;
+  border-radius: 20px;
+    
+}
+
 .container {
   max-width: 500px;
 }
 
+h1 {
+  text-align: center;
+}
+
 .hover-tekst {
   font-size: 30px;
-  transition: transform 3s ease;
+  transition: transform 4s ease;
 }
 
 .hover-tekst:hover {
-  transform: scale(1.5);
+  transform: scale(2);
 }

@@ -12,7 +12,9 @@ To Do:
         * Start på spillet
         * Game over screen
         * 
-    * Legg til en hover på teksten "SPILL" som gjør at den endrer størelse fram til at du trykker på spill
+    * Legg til en hover på teksten "SPILL" som gjør at den endrer størelse fram til at du trykker på spill |
+    * Lag en ramme rundt "Spill"|
+    * Midtstill boksen slik at den ikke er like stor|
     * Lag en funksjon for når man taper
 
 
