@@ -8,6 +8,7 @@
   </head>
   <body id="body">
     <div class="container" onclick="endreBakgrunn()">
+      <input>
       <h1 class="hover-tekst" id="ramme">SPILL</h1>
     </div>
 
@@ -20,12 +21,16 @@
 
       function endreBakgrunn() {
         console.log("Endrer bakgrunn");
-        document.getElementById("body").style.backgroundImage = "Bilder/Mittandrebilde.jpg";
+        document.getElementById("body").style.backgroundImage = 'url("Bilder/night_cabin.jpg")';
+
+        //skjuler spill knappen
+        const container = document.querySelector(".container");
+        container.style.display = "none";
       }
 
       function gameOver() {
         console.log("Du tapte")
-        document.getElementById("body").style.backgroundImage = "Bilder/gameover.jpg";
+        document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")';
       }
     </script>
   </body>
