@@ -8,18 +8,27 @@
   </head>
   <body id="body">
     <div class="container" onclick="endreBakgrunn()">
-      <input>
       <h1 class="hover-tekst" id="ramme">SPILL</h1>
     </div>
 
     <script>
-      //Legg til senere
+      
       //Lag en boks for inputen av navnet til brukeren
-      const container = document.getElementById("input-container")
+      function legtilnavn() {
+      const nameInput = document.createElement("input").value;
 
-      const nameInput = document.createElement("input")
+      if (nameInput.trim() !== "") {
+        console.log(`velkommen, ${nameInput}!`)
+      }
+        
+      }
+      
+      
+      const container = document.getElementById("input-container").value;
+      
 
       function endreBakgrunn() {
+        //endrer bildet til en hytte i en klarning
         console.log("Endrer bakgrunn");
         document.getElementById("body").style.backgroundImage = 'url("Bilder/night_cabin.jpg")';
 
