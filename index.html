@@ -7,8 +7,14 @@
     <title>Point & Click</title>
   </head>
   <body id="body">
-    <div class="container" onclick="endreBakgrunn()">
-      <h1 class="hover-tekst" id="ramme">SPILL</h1>
+    <div onclick="endreBakgrunn()">
+      <div class="container">
+        <h1 class="hover-tekst" id="ramme">SPILL</h1>
+      </div>
+      <div class="fortelling">
+        <p>Du drar ut i en klarning hvor du ser en hytte. Det er veldig sent på kvelden og kaldt ute.
+          Du kan nå enten prøve å komme deg inn i hytta eller dra tilbake til bilen din.</p>
+      </div>
     </div>
 
     <script>
@@ -21,7 +27,13 @@
         //skjuler spill knappen
         const container = document.querySelector(".container");
         container.style.display = "none";
+
+        // Legger til tekst som forteller om hva som skjer og hva du kan gjøre
+        const fortelling = document.querySelector(".fortelling");
+        fortelling.style.display = "block";
       }
+   
+      
       function gameOver() {
         console.log("Du tapte")
         document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")';
