@@ -11,13 +11,14 @@ To Do:
         * Startside|
         * Start på spillet 
         * Game over screen |
-        * En hytte
-        * En sort bakgrunn først
+        * En hytte |
     * Legg til en hover på teksten "SPILL" som gjør at den endrer størelse fram til at du trykker på spill |
     * Lag en ramme rundt "Spill"|
     * Midtstill boksen slik at den ikke er like stor|
     * Lag en funksjon for når man taper |
-    * Lag en navn input som dukker opp etter at man har startet spillet x funket ikke og tar for mye tid
+    * legg til tekst som forteller hva som skjer på starten av spillet |
+    * Lag en måte å dra vekk fra hytta 
+    * Lag en måte å prøve å komme inn i hytta
     * Lag en timer som teller ned
 
 
