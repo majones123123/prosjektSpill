@@ -17,8 +17,7 @@ To Do:
     * Lag en ramme rundt "Spill"|
     * Midtstill boksen slik at den ikke er like stor|
     * Lag en funksjon for når man taper |
-    * Lag en navn input som dukker opp etter at man har startet spillet
-    * Ha en tekst som gir litt eksposisjon/ Forteller hva som skjer 
+    * Lag en navn input som dukker opp etter at man har startet spillet x funket ikke og tar for mye tid
     * Lag en timer som teller ned
 
 
