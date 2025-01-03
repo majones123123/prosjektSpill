@@ -15,11 +15,18 @@
       
       //Lag en boks for inputen av navnet til brukeren
       function legtilnavn() {
-      const nameInput = document.createElement("input").value;
+        const nameInput = document.createElement("navn-input").value;
 
-      if (nameInput.trim() !== "") {
-        console.log(`velkommen, ${nameInput}!`)
-      }
+        if (nameInput.trim() !== "") {
+          console.log(`velkommen, ${nameInput}!`);
+          // gjemmer navnets input container
+          document.getElementById("navn-container").style.display = "none";
+
+          //vis spillets start container
+          document.getElementById("start-container").style.display = "block";
+        } else {
+          alert("Vennligst legg til navnet ditt");
+        }
         
       }
       
@@ -41,6 +48,8 @@
         console.log("Du tapte")
         document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")';
       }
+
+
     </script>
   </body>
 </html>

@@ -40,3 +40,39 @@ h1 {
 .hover-tekst:hover {
   transform: scale(2);
 }
+
+
+
+.navn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: auto;
+}
+
+.navn-container input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.navn-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navn-container button:hover {
+  background-color: #0056b3;
+}
