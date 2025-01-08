@@ -11,7 +11,7 @@
       <div class="container">
         <h1 class="hover-tekst" id="ramme">SPILL</h1>
       </div>
-      <div class="fortelling">
+      <div onclick="fjerntekst()" class="fortelling">
         <p>Du drar ut i en klarning hvor du ser en hytte. Det er veldig sent på kvelden og kaldt ute.
           Du kan nå enten prøve å komme deg inn i hytta eller dra tilbake til bilen din.</p>
       </div>
@@ -21,7 +21,7 @@
 
       function endreBakgrunn() {
         //endrer bildet til en hytte i en klarning
-        console.log("Endrer bakgrunn");
+        //console.log("Endrer bakgrunn");
         document.getElementById("body").style.backgroundImage = 'url("Bilder/night_cabin.jpg")';
 
         //skjuler spill knappen
@@ -31,6 +31,11 @@
         // Legger til tekst som forteller om hva som skjer og hva du kan gjøre
         const fortelling = document.querySelector(".fortelling");
         fortelling.style.display = "block";
+      }
+      function fjerntekst() {
+        console.log("Fjerner tekst");
+        const fortelling = document.querySelector(".fortelling")
+        fortelling.style.display = "none";
       }
    
       
