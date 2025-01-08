@@ -19,7 +19,8 @@ To Do:
     * legg til tekst som forteller hva som skjer på starten av spillet |
     * Lag en måte å dra vekk fra hytta 
     * Lag en måte å prøve å komme inn i hytta
-    * Lag en timer som teller ned
+    * FÅ teksten til å gå og dø eller noe lignende
+    * Fiks shit som ikke funker
 
 
 Ideer:

@@ -22,10 +22,21 @@ img {
   opacity: 70%;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#body {
+  width: 500px;
+  height: 500px;
+}
 .container {
   max-width: 500px;
 }
+
 
 h1 {
   text-align: center;
@@ -51,7 +62,7 @@ h1 {
   opacity: 50%;
   display: none;
 }
-
-#tekst1 {
+.teskt1 {
   display: none;
 }
+
