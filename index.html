@@ -11,7 +11,7 @@
       <div class="container">
         <h1 class="hover-tekst" id="ramme">SPILL</h1>
       </div>
-      <div onclick="fjerntekst()">
+      <div onclick="fjerntekst(this)">
         <p class="fortelling">Du drar ut i en klarning hvor du ser en hytte. Det er veldig sent på kvelden og kaldt ute.
           Du kan nå enten prøve å komme deg inn i hytta eller dra tilbake til bilen din.</p>
       </div>
@@ -47,11 +47,8 @@
         const fortelling = document.querySelector(".fortelling");
         fortelling.style.display = "block";
       }
-      function fjerntekst() {
-        console.log("Fjerner tekst");
-        const tekst1 = document.querySelector(".fortelling");
-        tekst1.style.display = "none";
-        
+      function fjerntekst(element) {
+        element.style.display = "none";
       }
    
       
