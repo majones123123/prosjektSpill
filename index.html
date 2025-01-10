@@ -12,10 +12,18 @@
         <h1 class="hover-tekst" id="ramme">SPILL</h1>
       </div>
       <div id="tekstboks" onclick="fjerntekst(this)">
-        <p class="fortelling">
-          Du har tatt Galaxy Gass og har våknet opp et sted som du ikke kjenner igjen. Du ser en hytte, og lurer på om det er noen der.
-          Du begynner å kjenne en kraftig kulde og du er bekymret for at du skal fryse i hjel. GÅ INN I HYTTA!!
-        </p>
+        <div>
+          <p class="fortelling">
+            Du har tatt Galaxy Gass og har våknet opp et sted som du ikke kjenner igjen. Du ser en hytte, og lurer på om det er noen der.
+            Du begynner å kjenne en kraftig kulde og du er bekymret for at du skal fryse i hjel. GÅ INN I HYTTA!!
+          </p>
+        </div>
+      </div>
+      <div id="tekstboks" onclick="fjerntekst(this)">
+        <div>
+          <p class="fortelling">På en eller annen mystisk måte, er hytta større på innsiden enn den er på utsiden. 
+            Du ser deg litt rundt og legger merke til noen rare merker på veggen over peisen.</p>
+        </div>
       </div>
     </div>
 
@@ -32,6 +40,7 @@
         document.getElementById("body").style.backgroundImage = 'url("Bilder/insidecabin.jpeg")';
         fjerntekst(document.getElementById("tekstboks"));
         executed++;
+
       }
       
       function klikkBody(event) {

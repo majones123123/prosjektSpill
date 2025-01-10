@@ -17,8 +17,8 @@ To Do:
     * Midtstill boksen slik at den ikke er like stor|
     * Lag en funksjon for når man taper |
     * legg til tekst som forteller hva som skjer på starten av spillet |
-    * Lag en måte å dra vekk fra hytta 
-    * Lag en måte å prøve å komme inn i hytta
+    * Lag en måte å dra vekk fra hytta x gjorde ikke fordi at jeg har ikke tid
+    * Lag en måte å prøve å komme inn i hytta|
     * FÅ teksten til å gå og dø eller noe lignende
     * Fiks shit som ikke funker
 
