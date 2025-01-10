@@ -6,54 +6,57 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Point & Click</title>
   </head>
-  <body >
+  <body>
     <div id="body" onclick="endreBakgrunn()">
       <div class="container">
         <h1 class="hover-tekst" id="ramme">SPILL</h1>
       </div>
-      <div onclick="fjerntekst(this)">
-        <p class="fortelling">Du drar ut i en klarning hvor du ser en hytte. Det er veldig sent på kvelden og kaldt ute.
-          Du kan nå enten prøve å komme deg inn i hytta eller dra tilbake til bilen din.</p>
+      <div id="tekstboks" onclick="fjerntekst(this)">
+        <p class="fortelling">
+          Du har tatt Galaxy Gass og har våknet opp et sted som du ikke kjenner igjen. Du ser en hytte, og lurer på om det er noen der.
+          Du begynner å kjenne en kraftig kulde og du er bekymret for at du skal fryse i hjel. GÅ INN I HYTTA!!
+        </p>
       </div>
     </div>
 
     <script>
+      document.getElementById("body").addEventListener("click", klikkBody);
+      let executed = 0;
 
-      document.getElementById("body").addEventListener("click", klikkBody)
-      let executed = 0
+      function fjerntekst(element) {
+        element.style.display = "none";
+      }
 
+      function dorKlikket() {
+        console.log("Dør klikket");
+        document.getElementById("body").style.backgroundImage = 'url("Bilder/insidecabin.jpeg")';
+        fjerntekst(document.getElementById("tekstboks"));
+        executed++;
+      }
+      
       function klikkBody(event) {
-        console.log(event)
-        console.log("x:", event.clientX)
-        console.log("y:", event.clientY)
-        const x = event.clientX
-        const y = event.clientY
-
+        console.log(event);
+        console.log("x:", event.clientX);
+        console.log("y:", event.clientY);
+        const x = event.clientX;
+        const y = event.clientY;
         
-
-        if (x>725 && x<743 && y>315 && y <380) {
-          console.log("Dør klikket")
-          document.getElementById("body").style.backgroundImage = 'url()'
-          executed++
+        if (x > 625 && x < 640 && y > 424 && y < 472) {
+          dorKlikket()
         }
-
-        if (x > 960 && x < 975 && y > 315 && y < 380) {
-          console.log("Dør klikket");
-          document.getElementById("body").style.backgroundImage = 'url("")';
-          executed++
+        if (x > 850 && x < 880 && y > 424 && y < 472) {
+          dorKlikket()
         }
-        
-
       }
 
       function endreBakgrunn() {
         //endrer bildet til en hytte i en klarning
         //console.log("Endrer bakgrunn");
-        if (executed < 2){
-          document.getElementById("body").style.backgroundImage = 'url("Bilder/night_cabin.jpg")';
-          executed++
+        if (executed < 2) {
+          document.getElementById("body").style.backgroundImage ='url("Bilder/night_cabin.jpg")';
+          document.getElementById("body").style.backgroundSize = "inherit";
+          executed++;
         }
-
 
         //skjuler spill knappen
         const container = document.querySelector(".container");
@@ -63,17 +66,12 @@
         const fortelling = document.querySelector(".fortelling");
         fortelling.style.display = "block";
       }
-      function fjerntekst(element) {
-        element.style.display = "none";
-      }
-   
-      
+
       function gameOver() {
-        console.log("Du tapte")
-        document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")';
+        console.log("Du tapte");
+        document.getElementById("body").style.backgroundImage =
+          'url("Bilder/gameover.jpg")';
       }
     </script>
-
-    
   </body>
 </html>
