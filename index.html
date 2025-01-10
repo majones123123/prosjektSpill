@@ -20,24 +20,40 @@
     <script>
 
       document.getElementById("body").addEventListener("click", klikkBody)
+      let executed = 0
 
       function klikkBody(event) {
         console.log(event)
-        //console.log("x:", event.clientX)
-        //console.log("y:", event.clientY)
+        console.log("x:", event.clientX)
+        console.log("y:", event.clientY)
         const x = event.clientX
         const y = event.clientY
 
-        if (x>650 && x<670 && y>340 && y <380) {
+        
+
+        if (x>725 && x<743 && y>315 && y <380) {
           console.log("Dør klikket")
+          document.getElementById("body").style.backgroundImage = 'url()'
+          executed++
         }
+
+        if (x > 960 && x < 975 && y > 315 && y < 380) {
+          console.log("Dør klikket");
+          document.getElementById("body").style.backgroundImage = 'url("")';
+          executed++
+        }
+        
 
       }
 
       function endreBakgrunn() {
         //endrer bildet til en hytte i en klarning
         //console.log("Endrer bakgrunn");
-        document.getElementById("body").style.backgroundImage = 'url("Bilder/night_cabin.jpg")';
+        if (executed < 2){
+          document.getElementById("body").style.backgroundImage = 'url("Bilder/night_cabin.jpg")';
+          executed++
+        }
+
 
         //skjuler spill knappen
         const container = document.querySelector(".container");
