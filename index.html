@@ -19,7 +19,7 @@
           </p>
         </div>
       </div>
-      <div id="tekstboks" onclick="fjerntekst(this)">
+      <div id="tekstboks2" onclick="fjerntekst(this)">
         <div>
           <p class="fortelling">På en eller annen mystisk måte, er hytta større på innsiden enn den er på utsiden. 
             Du ser deg litt rundt og legger merke til noen rare merker på veggen over peisen.</p>
@@ -43,6 +43,13 @@
 
       }
       
+      function peisklikket() {
+        console.log("Peis klikket");
+        document.getElementById("body").style.backgroundImage = 'url("Bilder/buttons.png")';
+        fjerntekst(document.getElementById("tekstboks2"));
+        executed++;
+      }
+
       function klikkBody(event) {
         console.log(event);
         console.log("x:", event.clientX);
@@ -78,9 +85,16 @@
 
       function gameOver() {
         console.log("Du tapte");
-        document.getElementById("body").style.backgroundImage =
+        document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")'
           'url("Bilder/gameover.jpg")';
       }
-    </script>
+
+      if (executed == 3) {
+        document.getElementById("tekstboks2").style.display = "block";
+      }
+
+
+
+     </script>
   </body>
 </html>
