@@ -19,9 +19,14 @@
           GÅ INN I HYTTA!!
         </p>
       </div>
-      <div>
+      <div onclick="klikkBody(this)">
         <audio id="soundEffect">
-          <source src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp1" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp2" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp3" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp4" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp5" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp6" src="Lyder/correct.mp3" type="audio/mpeg" />
         </audio>
         <audio id="wictory">
           <source src="Lyder/win.mp3" type="audio/mpeg" />
@@ -33,10 +38,13 @@
       const soundEffect = document.getElementById("soundEffect");
       const sound = document.getElementById("correct");
       const wictory = document.getElementById("wictory");
-
-      document.getElementById("body").addEventListener("click", klikkBody);
+      
       let executed = 0;
       let buttonclicks = 0;
+
+      console.log(executed)
+
+      document.getElementById("body").addEventListener("click", klikkBody);
 
       function fjerntekst(element) {
         element.style.display = "none";
@@ -58,9 +66,7 @@
           executed++;
         }
 
-        if ((executed = 3)) {
-          console.log("Peis klikket");
-        }
+       
       }
 
       function knappKlikket() {
@@ -85,6 +91,8 @@
         console.log("y:", event.clientY);
         const x = event.clientX;
         const y = event.clientY;
+        const f = event.clientX;
+        const z = event.clientY;
 
         if (x > 650 && x < 670 && y > 424 && y < 472) {
           dorKlikket();
@@ -99,40 +107,40 @@
         if (x > 621 && x < 727 && y > 449 && y < 540) {
           peisKlikket();
         }
-        executed = 4;
+        
         if (executed > 3) {
-          if (x > 466 && x < 600 && y > 240 && y < 440) {
-            console.log("knapp1");
+          if (f > 466 && f < 600 && z > 240 && z < 440) {
+            const knapp1 = document.getElementById("knapp1");
             soundEffect.play();
             buttonclicks++;
             console.log(buttonclicks);
           }
           if (x > 622 && x < 760 && y > 240 && y < 440) {
-            console.log("knapp2");
+            const knapp2 = document.getElementById("knapp2");
             soundEffect.play();
             buttonclicks++;
             console.log(buttonclicks);
           }
           if (x > 778 && x < 916 && y > 240 && y < 440) {
-            console.log("knapp3");
+            const knapp3 = document.getElementById("knapp3");
             soundEffect.play();
             buttonclicks++;
             console.log(buttonclicks);
           }
           if (x > 466 && x < 600 && y > 475 && y < 670) {
-            console.log("knapp4");
+            const knapp4 = document.getElementById("knapp4");
             soundEffect.play();
             buttonclicks++;
             console.log(buttonclicks);
           }
           if (x > 622 && x < 760 && y > 475 && y < 670) {
-            console.log("knapp5");
+            const knapp5 = document.getElementById("knapp5");
             soundEffect.play();
             buttonclicks++;
             console.log(buttonclicks);
           }
           if (x > 778 && x < 916 && y > 475 && y < 670) {
-            console.log("knapp6");
+            const knapp6 = document.getElementById("knapp6");
             soundEffect.play();
 
             buttonclicks++;
@@ -162,6 +170,7 @@
         const fortelling = document.querySelector(".fortelling");
         fortelling.style.display = "block";
       }
+      console.log("executed", executed)
 
       function gameOver() {
         console.log("Du tapte");
