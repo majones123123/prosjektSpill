@@ -12,34 +12,29 @@
         <h1 class="hover-tekst" id="ramme">SPILL</h1>
       </div>
       <div id="tekstboks" onclick="fjerntekst(this)">
-        <div>
-          <p class="fortelling">
-            Du har tatt Galaxy Gass og har våknet opp et sted som du ikke
-            kjenner igjen. Du ser en hytte, og lurer på om det er noen der. Du
-            begynner å kjenne en kraftig kulde og du er bekymret for at du skal
-            fryse i hjel. GÅ INN I HYTTA!!
-          </p>
-        </div>
+        <p class="fortelling">
+          Du har tatt Galaxy Gass og har våknet opp et sted som du ikke kjenner
+          igjen. Du ser en hytte, og lurer på om det er noen der. Du begynner å
+          kjenne en kraftig kulde og du er bekymret for at du skal fryse i hjel.
+          GÅ INN I HYTTA!!
+        </p>
       </div>
-      <div id="tekstboks2" onclick="fjerntekst(this)">
-        <div>
-          <p class="fortelling">
-            På en eller annen mystisk måte, er hytta større på innsiden enn den
-            er på utsiden. Du ser deg litt rundt og legger merke til noen rare
-            merker på veggen over peisen.
-          </p>
-        </div>
+      <div>
+        <audio id="soundEffect">
+          <source src="Lyder/correct.mp3" type="audio/mpeg" />
+        </audio>
+        <audio id="wictory">
+          <source src="Lyder/win.mp3" type="audio/mpeg" />
+        </audio>
       </div>
-      <audio id="sound">
-        <source src="Lyder/correct.mp3" type="audio/mp3" />
-      </audio>
     </div>
 
     <script>
+      const soundEffect = document.getElementById("soundEffect");
       const sound = document.getElementById("correct");
-      document
-        .getElementById("body")
-        .addEventListener("click", klikkBody, MiniGame);
+      const wictory = document.getElementById("wictory");
+
+      document.getElementById("body").addEventListener("click", klikkBody);
       let executed = 0;
       let buttonclicks = 0;
 
@@ -52,7 +47,6 @@
         document.getElementById("body").style.backgroundImage =
           'url("Bilder/insidecabin.jpeg")';
         fjerntekst(document.getElementById("tekstboks"));
-        document.getElementById("tekstboks2").style.display = "block";
         executed++;
       }
 
@@ -61,19 +55,18 @@
         if (executed > 2) {
           document.getElementById("body").style.backgroundImage =
             'url("Bilder/buttons.jpeg")';
-        }
-        if (executed < 3) {
           executed++;
         }
+
         if ((executed = 3)) {
           console.log("Peis klikket");
         }
       }
 
-      // Lyder for minigame
       function knappKlikket() {
         console.log("knapp Klikket");
       }
+      // Lyder for minigame
       function correct(Audio) {
         const audio = new Audio("Lyder/correct.mp3");
         number++;
@@ -102,54 +95,51 @@
         if (x > 773 && x < 801 && y > 528 && y < 580) {
           dorKlikket();
         }
+
         if (x > 621 && x < 727 && y > 449 && y < 540) {
           peisKlikket();
         }
-      }
-      // Minigame
-      function MiniGame(event) {
-        console.log(event);
-        const x = event.clientX;
-        const y = event.clientY;
-        while (buttonclicks != 6) {
+        executed = 4;
+        if (executed > 3) {
           if (x > 466 && x < 600 && y > 240 && y < 440) {
             console.log("knapp1");
-            sound.play();
+            soundEffect.play();
             buttonclicks++;
-            console.log(buttonclicks)
+            console.log(buttonclicks);
           }
           if (x > 622 && x < 760 && y > 240 && y < 440) {
             console.log("knapp2");
-            sound.play();
+            soundEffect.play();
             buttonclicks++;
-            console.log(buttonclicks)
+            console.log(buttonclicks);
           }
           if (x > 778 && x < 916 && y > 240 && y < 440) {
             console.log("knapp3");
-            sound.play();
+            soundEffect.play();
             buttonclicks++;
-            console.log(buttonclicks)
+            console.log(buttonclicks);
           }
           if (x > 466 && x < 600 && y > 475 && y < 670) {
             console.log("knapp4");
-            sound.play();
+            soundEffect.play();
             buttonclicks++;
-            console.log(buttonclicks)
+            console.log(buttonclicks);
           }
           if (x > 622 && x < 760 && y > 475 && y < 670) {
             console.log("knapp5");
-            sound.play();
+            soundEffect.play();
             buttonclicks++;
-            console.log(buttonclicks)
+            console.log(buttonclicks);
           }
           if (x > 778 && x < 916 && y > 475 && y < 670) {
             console.log("knapp6");
-            sound.play();
+            soundEffect.play();
+
             buttonclicks++;
-            console.log(buttonclicks)
+            console.log(buttonclicks);
           }
 
-          win(Audio);
+          
         }
       }
 
