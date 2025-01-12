@@ -29,7 +29,7 @@
           <source id="knapp6" src="Lyder/correct.mp3" type="audio/mpeg" />
         </audio>
         <audio id="wictory">
-          <source src="Lyder/win.mp3" type="audio/mpeg" />
+          <source id="vunnet" src="Lyder/win.mp3" type="audio/mpeg" />
         </audio>
       </div>
     </div>
@@ -159,6 +159,8 @@
 
           if (buttonclicks == 6) {
             victoryscreen();
+            const vunnet = document.getElementById("vunnet");
+            wictory.play();
           }
         }
       }
