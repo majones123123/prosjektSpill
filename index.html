@@ -19,7 +19,7 @@
           </p>
         </div>
       </div>
-      <div id="tekstboks2">
+      <div id="tekstboks2" onclick="fjerntekst(this)">
         <div>
           <p class="fortelling">På en eller annen mystisk måte, er hytta større på innsiden enn den er på utsiden. 
             Du ser deg litt rundt og legger merke til noen rare merker på veggen over peisen.</p>
@@ -37,17 +37,21 @@
 
       function dorKlikket() {
         console.log("Dør klikket");
+        console.log(executed)
         document.getElementById("body").style.backgroundImage = 'url("Bilder/insidecabin.jpeg")';
         fjerntekst(document.getElementById("tekstboks"));
+        document.getElementById("tekstboks2").style.display = "block";
         executed++;
-
       }
       
-      function peisklikket() {
+      function peisKlikket() {
         console.log("Peis klikket");
-        document.getElementById("body").style.backgroundImage = 'url("Bilder/buttons.png")';
-        fjerntekst(document.getElementById("tekstboks2"));
-        executed++;
+        console.log(executed)
+        if (executed > 2) {
+          document.getElementById("body").style.backgroundImage = 'url("Bilder/buttons.jpeg")';
+          fjerntekst(document.getElementById("tekstboks2"));
+          executed++;
+        }
       }
 
       function klikkBody(event) {
@@ -66,12 +70,17 @@
         if (x > 773 && x < 801 && y > 528 && y < 580) {
           dorKlikket()
         }
+        if (x > 621 && x < 727 && y > 449 && y < 540) {
+          
+          peisKlikket()
+        }
       }
 
       function endreBakgrunn() {
         //endrer bildet til en hytte i en klarning
         //console.log("Endrer bakgrunn");
         if (executed < 2) {
+          console.log(executed)
           document.getElementById("body").style.backgroundImage ='url("Bilder/night_cabin.jpg")';
           document.getElementById("body").style.backgroundSize = "inherit";
           executed++;
@@ -91,11 +100,7 @@
         document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")'
           'url("Bilder/gameover.jpg")';
       }
-
-      if (executed == 3) {
-        document.getElementById("tekstboks2").style.display = "block";
-      }
-
+     
 
 
      </script>
