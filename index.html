@@ -84,6 +84,12 @@
         const audio = new Audio("Lyder/win.mp3");
       }
 
+      function victoryscreen() {
+        if (buttonclicks = 6){
+          document.getElementById("body").style.backgroundImage = 'url("Bilder/victory.jpg")';
+        }
+      }
+
       // La seg klikke inn i hytta
       function klikkBody(event) {
         console.log(event);
@@ -108,8 +114,9 @@
           peisKlikket();
         }
         
-        if (executed > 3) {
-          if (f > 466 && f < 600 && z > 240 && z < 440) {
+        if (executed > 3 && buttonclicks < 6) {
+
+          if (x > 466 && x < 600 && y > 240 && y < 440) {
             const knapp1 = document.getElementById("knapp1");
             soundEffect.play();
             buttonclicks++;
@@ -147,7 +154,9 @@
             console.log(buttonclicks);
           }
 
-          
+          if (buttonclicks == 6){
+            victoryscreen()
+          }
         }
       }
 
