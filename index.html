@@ -14,65 +14,142 @@
       <div id="tekstboks" onclick="fjerntekst(this)">
         <div>
           <p class="fortelling">
-            Du har tatt Galaxy Gass og har våknet opp et sted som du ikke kjenner igjen. Du ser en hytte, og lurer på om det er noen der.
-            Du begynner å kjenne en kraftig kulde og du er bekymret for at du skal fryse i hjel. GÅ INN I HYTTA!!
+            Du har tatt Galaxy Gass og har våknet opp et sted som du ikke
+            kjenner igjen. Du ser en hytte, og lurer på om det er noen der. Du
+            begynner å kjenne en kraftig kulde og du er bekymret for at du skal
+            fryse i hjel. GÅ INN I HYTTA!!
           </p>
         </div>
       </div>
       <div id="tekstboks2" onclick="fjerntekst(this)">
         <div>
-          <p class="fortelling">På en eller annen mystisk måte, er hytta større på innsiden enn den er på utsiden. 
-            Du ser deg litt rundt og legger merke til noen rare merker på veggen over peisen.</p>
+          <p class="fortelling">
+            På en eller annen mystisk måte, er hytta større på innsiden enn den
+            er på utsiden. Du ser deg litt rundt og legger merke til noen rare
+            merker på veggen over peisen.
+          </p>
         </div>
       </div>
+      <audio id="sound">
+        <source src="Lyder/correct.mp3" type="audio/mp3" />
+      </audio>
     </div>
 
     <script>
-      document.getElementById("body").addEventListener("click", klikkBody);
+      const sound = document.getElementById("correct");
+      document
+        .getElementById("body")
+        .addEventListener("click", klikkBody, MiniGame);
       let executed = 0;
+      let buttonclicks = 0;
 
       function fjerntekst(element) {
         element.style.display = "none";
       }
 
       function dorKlikket() {
-        console.log("Dør klikket");
-        console.log(executed)
-        document.getElementById("body").style.backgroundImage = 'url("Bilder/insidecabin.jpeg")';
+        console.log(executed);
+        document.getElementById("body").style.backgroundImage =
+          'url("Bilder/insidecabin.jpeg")';
         fjerntekst(document.getElementById("tekstboks"));
         document.getElementById("tekstboks2").style.display = "block";
         executed++;
       }
-      
+
       function peisKlikket() {
-        console.log("Peis klikket");
-        console.log(executed)
+        console.log(executed);
         if (executed > 2) {
-          document.getElementById("body").style.backgroundImage = 'url("Bilder/buttons.jpeg")';
-          fjerntekst(document.getElementById("tekstboks2"));
+          document.getElementById("body").style.backgroundImage =
+            'url("Bilder/buttons.jpeg")';
+        }
+        if (executed < 3) {
           executed++;
+        }
+        if ((executed = 3)) {
+          console.log("Peis klikket");
         }
       }
 
+      // Lyder for minigame
+      function knappKlikket() {
+        console.log("knapp Klikket");
+      }
+      function correct(Audio) {
+        const audio = new Audio("Lyder/correct.mp3");
+        number++;
+      }
+      function wrong(Audio) {
+        const audio = new Audio("Lyder/wrong.mp3");
+      }
+      function win(Audio) {
+        const audio = new Audio("Lyder/win.mp3");
+      }
+
+      // La seg klikke inn i hytta
       function klikkBody(event) {
         console.log(event);
         console.log("x:", event.clientX);
         console.log("y:", event.clientY);
         const x = event.clientX;
         const y = event.clientY;
-        
+
         if (x > 650 && x < 670 && y > 424 && y < 472) {
-          dorKlikket()
+          dorKlikket();
         }
         if (x > 850 && x < 880 && y > 424 && y < 472) {
-          dorKlikket()
+          dorKlikket();
         }
         if (x > 773 && x < 801 && y > 528 && y < 580) {
-          dorKlikket()
+          dorKlikket();
         }
         if (x > 621 && x < 727 && y > 449 && y < 540) {
-          
-          peisKlikket()
+          peisKlikket();
+        }
+      }
+      // Minigame
+      function MiniGame(event) {
+        console.log(event);
+        const x = event.clientX;
+        const y = event.clientY;
+        while (buttonclicks != 6) {
+          if (x > 466 && x < 600 && y > 240 && y < 440) {
+            console.log("knapp1");
+            sound.play();
+            buttonclicks++;
+            console.log(buttonclicks)
+          }
+          if (x > 622 && x < 760 && y > 240 && y < 440) {
+            console.log("knapp2");
+            sound.play();
+            buttonclicks++;
+            console.log(buttonclicks)
+          }
+          if (x > 778 && x < 916 && y > 240 && y < 440) {
+            console.log("knapp3");
+            sound.play();
+            buttonclicks++;
+            console.log(buttonclicks)
+          }
+          if (x > 466 && x < 600 && y > 475 && y < 670) {
+            console.log("knapp4");
+            sound.play();
+            buttonclicks++;
+            console.log(buttonclicks)
+          }
+          if (x > 622 && x < 760 && y > 475 && y < 670) {
+            console.log("knapp5");
+            sound.play();
+            buttonclicks++;
+            console.log(buttonclicks)
+          }
+          if (x > 778 && x < 916 && y > 475 && y < 670) {
+            console.log("knapp6");
+            sound.play();
+            buttonclicks++;
+            console.log(buttonclicks)
+          }
+
+          win(Audio);
         }
       }
 
@@ -80,8 +157,9 @@
         //endrer bildet til en hytte i en klarning
         //console.log("Endrer bakgrunn");
         if (executed < 2) {
-          console.log(executed)
-          document.getElementById("body").style.backgroundImage ='url("Bilder/night_cabin.jpg")';
+          console.log(executed);
+          document.getElementById("body").style.backgroundImage =
+            'url("Bilder/night_cabin.jpg")';
           document.getElementById("body").style.backgroundSize = "inherit";
           executed++;
         }
@@ -97,12 +175,10 @@
 
       function gameOver() {
         console.log("Du tapte");
-        document.getElementById("body").style.backgroundImage = 'url("Bilder/gameover.jpg")'
+        document.getElementById("body").style.backgroundImage =
           'url("Bilder/gameover.jpg")';
+        ('url("Bilder/gameover.jpg")');
       }
-     
-
-
-     </script>
+    </script>
   </body>
 </html>
