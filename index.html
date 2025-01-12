@@ -27,6 +27,12 @@
           <source id="knapp4" src="Lyder/correct.mp3" type="audio/mpeg" />
           <source id="knapp5" src="Lyder/correct.mp3" type="audio/mpeg" />
           <source id="knapp6" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp11" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp22" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp33" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp44" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp55" src="Lyder/correct.mp3" type="audio/mpeg" />
+          <source id="knapp66" src="Lyder/correct.mp3" type="audio/mpeg" />
         </audio>
         <audio id="wictory">
           <source id="vunnet" src="Lyder/win.mp3" type="audio/mpeg" />
@@ -119,6 +125,8 @@
         }
 
         if (executed > 3 && buttonclicks < 6) {
+
+          //for min egen giga skjerm som ble brukt til å teste ting kjapere4
           if (x > 466 && x < 600 && y > 240 && y < 440) {
             const knapp1 = document.getElementById("knapp1");
             soundEffect.play();
@@ -153,6 +161,45 @@
             const knapp6 = document.getElementById("knapp6");
             soundEffect.play();
 
+            buttonclicks++;
+            console.log(buttonclicks);
+          }
+
+          // For liten men ikke inspect skjerm
+
+          if (x > 540 && x < 680 && y > 145 && y < 440) {
+            const knapp11 = document.getElementById("knapp11");
+            soundEffect.play();
+            buttonclicks++;
+            console.log(buttonclicks);
+          }
+          if (x > 700 && x < 840 && y > 145 && y < 440) {
+            const knapp22 = document.getElementById("knapp22");
+            soundEffect.play();
+            buttonclicks++;
+            console.log(buttonclicks);
+          }
+          if (x > 860 && x < 1000 && y > 145 && y < 440) {
+            const knapp33 = document.getElementById("knapp33");
+            soundEffect.play();
+            buttonclicks++;
+            console.log(buttonclicks);
+          }
+          if (x > 540 && x < 680 && y > 380 && y < 580) {
+            const knapp44 = document.getElementById("knapp44");
+            soundEffect.play();
+            buttonclicks++;
+            console.log(buttonclicks);
+          }
+          if (x > 700 && x < 840 && y > 380 && y < 580) {
+            const knapp55 = document.getElementById("knapp55");
+            soundEffect.play();
+            buttonclicks++;
+            console.log(buttonclicks);
+          }
+          if (x > 860 && x < 1000 && y > 380 && y < 580) {
+            const knapp66 = document.getElementById("knapp66");
+            soundEffect.play();
             buttonclicks++;
             console.log(buttonclicks);
           }
